@@ -36,5 +36,3 @@ if __name__ == '__main__':  # Run only if this file is active
             year_taxes += tax_lonely(income_for_tax)
 
         print(year_taxes)
-
-
