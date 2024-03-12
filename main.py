@@ -49,6 +49,8 @@ def one_parent(x):
         tax = 12950 * 0.1 + (49400 - 12951) * 0.15 + (127550 - 49401) * 0.25 + (206600 - 127551) * 0.28 + (
                 405100-206601) * 0.33 + (432200 - 405101)*0.35 + (x - 432201) * 0.396
     return tax
+
+
 def family(x):
     tax = 0
     if x <= 18150:
@@ -68,7 +70,7 @@ def family(x):
     elif x >= 457601:
         tax = 18150 * 0.1 + (73800 - 18151) * 0.15 + (148850 - 73801) * 0.25 + (226850 - 148851) * 0.28 + (
                 405100 - 226851) * 0.33 + (457600 - 405101) * 0.35 + (x-457601)*0.396
-        return tax
+    return tax
 
 
 if __name__ == '__main__':  # Run only if this file is active
@@ -115,7 +117,7 @@ if __name__ == '__main__':  # Run only if this file is active
         """
         Yearly tax if the user is a single parent.
         """
-        print(ru.YEARLY_TAX , one_parent(income_t), sep='')
+        print(ru.YEARLY_TAX, one_parent(income_t), sep='')
         print(ru.MONTHLY, one_parent(income_t) / 12, sep='')
     else:
         print(ru.ERROR)
