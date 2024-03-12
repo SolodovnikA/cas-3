@@ -28,14 +28,14 @@ if __name__ == '__main__':  # Run only if this file is active
 
     income = 0
     for month in local.MONTHS:
-        print(local.REQUEST_1, end='\n')
+        print(local.REQUEST_1)
         income_for_tax = int(input(local.QUESTION_2 + month + '\n'))
         income += income_for_tax
     print(local.INCOME_SUMMARY + income, end='\n')
 
     income_free_tax = 0
     for month in local.MONTHS:
-        print(local.REQUEST_2, end='\n')
+        print(local.REQUEST_2)
         income_without_tax = int(input(local.QUESTION_3 + month + '\n'))
         income_free_tax += income_without_tax
     print(local.INCOME_FREE + income_free_tax, end='\n')
