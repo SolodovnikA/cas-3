@@ -3,7 +3,7 @@ import local as ru
 
 def tax_lonely(x):
     """
-    Function determines amount of yearly tax for a single person
+    Function determines amount of yearly tax for a single person.
     """
     tax = 0
     if x <= 9075:
@@ -27,6 +27,9 @@ def tax_lonely(x):
 
 
 def one_parent(x):
+    """
+    Function determines amount of yearly tax for a single parent.
+    """
     tax = 0
     if x <= 12950:
         tax = x * 0.1
@@ -71,29 +74,41 @@ def family(x):
 if __name__ == '__main__':  # Run only if this file is active
     tax_type = int(input(ru.QUESTION_1))
 
+    print(ru.REQUEST_1)
     income = 0
     for month in ru.MONTHS:
-        print(ru.REQUEST_1)
+        """
+        Cycle determines annual income.
+        """
         income_for_tax = int(input(ru.QUESTION_2 + month + '\n'))
         income += income_for_tax
-    print(ru.INCOME_SUMMARY + income, end='\n')
+    print(ru.INCOME_SUMMARY, income, sep='')  # Overall yearly income.
 
+    print(ru.REQUEST_2)
     income_free_tax = 0
     for month in ru.MONTHS:
-        print(ru.REQUEST_2)
+        """
+        Cycle determines annual tax-free amount.
+        """
         income_without_tax = int(input(ru.QUESTION_3 + month + '\n'))
         income_free_tax += income_without_tax
-    print(ru.INCOME_FREE + income_free_tax, end='\n')
+    print(ru.INCOME_FREE, income_free_tax, sep='')  # Overall amount that is tax-free.
 
     income_t = income - income_free_tax
-    print(ru.FINAL_INCOME + income_t, end='\n')
+    print(ru.FINAL_INCOME, income_t, sep='')  # Final income that is going to be taxed.
 
     if tax_type == 1:
-        print(ru.YEARLY_TAX + tax_lonely(income_t))
-        print(ru.MONTHLY + tax_lonely(income_t)/12)
+        """
+        Yearly tax if the user is a single person.
+        """
+        print(ru.YEARLY_TAX, tax_lonely(income_t), sep='')
+        print(ru.MONTHLY, tax_lonely(income_t)/12, sep='')
 
     elif tax_type == 3:
-        print(ru.YEARLY_TAX + one_parent(income_t))
-        print(ru.MONTHLY + one_parent(income_t) / 12)
+        """
+        Yearly tax if the user is a single parent.
+        """
+        print(ru.YEARLY_TAX , one_parent(income_t), sep='')
+        print(ru.MONTHLY, one_parent(income_t) / 12, sep='')
     else:
         print(ru.ERROR)
