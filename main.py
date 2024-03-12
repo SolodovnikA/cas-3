@@ -1,7 +1,10 @@
-import local
+import local as ru
 
 
 def tax_lonely(x):
+    """
+    Function determines amount of yearly tax for a single person
+    """
     tax = 0
     if x <= 9075:
         tax = x * 0.1
@@ -46,32 +49,31 @@ def one_parent(x):
 
 
 if __name__ == '__main__':  # Run only if this file is active
-    tax_type = int(input(local.QUESTION_1))
+    tax_type = int(input(ru.QUESTION_1))
 
     income = 0
-    for month in local.MONTHS:
-        print(local.REQUEST_1)
-        income_for_tax = int(input(local.QUESTION_2 + month + '\n'))
+    for month in ru.MONTHS:
+        print(ru.REQUEST_1)
+        income_for_tax = int(input(ru.QUESTION_2 + month + '\n'))
         income += income_for_tax
-    print(local.INCOME_SUMMARY + income, end='\n')
+    print(ru.INCOME_SUMMARY + income, end='\n')
 
     income_free_tax = 0
-    for month in local.MONTHS:
-        print(local.REQUEST_2)
-        income_without_tax = int(input(local.QUESTION_3 + month + '\n'))
+    for month in ru.MONTHS:
+        print(ru.REQUEST_2)
+        income_without_tax = int(input(ru.QUESTION_3 + month + '\n'))
         income_free_tax += income_without_tax
-    print(local.INCOME_FREE + income_free_tax, end='\n')
+    print(ru.INCOME_FREE + income_free_tax, end='\n')
 
     income_t = income - income_free_tax
-    print(local.FINAL_INCOME + income_t, end='\n')
+    print(ru.FINAL_INCOME + income_t, end='\n')
 
     if tax_type == 1:
-        print(local.YEARLY_TAX + tax_lonely(income_t))
-        print(local.MONTHLY + tax_lonely(income_t)/12)
+        print(ru.YEARLY_TAX + tax_lonely(income_t))
+        print(ru.MONTHLY + tax_lonely(income_t)/12)
 
     elif tax_type == 3:
-        print(local.YEARLY_TAX + one_parent(income_t))
-        print(local.MONTHLY + one_parent(income_t) / 12)
+        print(ru.YEARLY_TAX + one_parent(income_t))
+        print(ru.MONTHLY + one_parent(income_t) / 12)
     else:
-        print(local.ERROR)
-
+        print(ru.ERROR)
