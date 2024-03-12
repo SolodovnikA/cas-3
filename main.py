@@ -44,6 +44,7 @@ def one_parent(x):
                 405100-206601) * 0.33 + (432200 - 405101)*0.35 + (x - 432201) * 0.396
     return tax
 
+
 if __name__ == '__main__':  # Run only if this file is active
     tax_type = int(input(local.QUESTION_1))
 
@@ -68,11 +69,9 @@ if __name__ == '__main__':  # Run only if this file is active
         print(local.YEARLY_TAX + tax_lonely(income_t))
         print(local.MONTHLY + tax_lonely(income_t)/12)
 
-
     elif tax_type == 3:
         print(local.YEARLY_TAX + one_parent(income_t))
         print(local.MONTHLY + one_parent(income_t) / 12)
     else:
         print("Введенный тип не найден")
         # print(year_taxes)
-
