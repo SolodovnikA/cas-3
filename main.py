@@ -1,3 +1,7 @@
+# Case-study #3
+# Developers: Solodovnik A., Soknyshev D., Kabanova M., Kim A.
+#
+
 import local as ru
 
 
