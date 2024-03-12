@@ -54,22 +54,22 @@ def one_parent(x):
 if __name__ == '__main__':  # Run only if this file is active
     tax_type = int(input(ru.QUESTION_1))
 
+    print(ru.REQUEST_1)
     income = 0
     for month in ru.MONTHS:
         """
         Cycle determines annual income.
         """
-        print(ru.REQUEST_1)
         income_for_tax = int(input(ru.QUESTION_2 + month + '\n'))
         income += income_for_tax
     print(ru.INCOME_SUMMARY, income, sep='')  # Overall yearly income.
 
+    print(ru.REQUEST_2)
     income_free_tax = 0
     for month in ru.MONTHS:
         """
         Cycle determines annual tax-free amount.
         """
-        print(ru.REQUEST_2)
         income_without_tax = int(input(ru.QUESTION_3 + month + '\n'))
         income_free_tax += income_without_tax
     print(ru.INCOME_FREE, income_free_tax, sep='')  # Overall amount that is tax-free.
