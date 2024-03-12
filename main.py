@@ -73,5 +73,5 @@ if __name__ == '__main__':  # Run only if this file is active
         print(local.YEARLY_TAX + one_parent(income_t))
         print(local.MONTHLY + one_parent(income_t) / 12)
     else:
-        print("Введенный тип не найден")
-        # print(year_taxes)
+        print(local.ERROR)
+
