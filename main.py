@@ -104,6 +104,13 @@ if __name__ == '__main__':  # Run only if this file is active
         print(ru.YEARLY_TAX, tax_lonely(income_t), sep='')
         print(ru.MONTHLY, tax_lonely(income_t)/12, sep='')
 
+    elif tax_type == 2:
+        """
+        Yearly tax if the user is a single person.
+        """
+        print(ru.YEARLY_TAX, family(income_t), sep='')
+        print(ru.MONTHLY, family(income_t) / 12, sep='')
+
     elif tax_type == 3:
         """
         Yearly tax if the user is a single parent.
