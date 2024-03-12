@@ -75,3 +75,4 @@ if __name__ == '__main__':  # Run only if this file is active
     else:
         print("Введенный тип не найден")
         # print(year_taxes)
+
